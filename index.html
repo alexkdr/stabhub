@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to App Store...</title>
+  <script>
+    window.onload = function () {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/android/i.test(userAgent)) {
+        // Android ➜ Google Play
+        window.location.href = "https://play.google.com/store/apps/details?id=com.stabhub.android";
+      } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        // iOS ➜ App Store
+        window.location.href = "https://apps.apple.com/us/app/stab-hub/id1599294512";
+      } else {
+        // Optional: fallback page or stay
+        window.location.href = "https://stabhub.net/unsupported";
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Redirecting to the appropriate app store...</p>
+</body>
+</html>
